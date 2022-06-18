@@ -135,7 +135,7 @@ for root, dirs, files in os.walk(xccdfdir):
                                                                 element_VULN.find('FINDING_DETAILS').text        = finding_details
                                                                 element_VULN.find('COMMENTS').text               = trackerComments                                                                                                                   
                                                                 break                                                        
-                                                #XCCDF has no results, try the custom script summary csv
+                                                #XCCDF has no results, try the csv
                                                 if (xccdfValueUsed == False):                                                
                                                     try:
                                                         summarycsv = csv.DictReader(open(summarycsvpath))
@@ -203,8 +203,7 @@ for root, dirs, files in os.walk(xccdfdir):
                                                                             element_VULN.find('FINDING_DETAILS').text        = trackerFinding_Details
                                                                             element_VULN.find('COMMENTS').text               = trackerComments
                                                                             trackerUsed = True
-                                                                            print("Updating "+xccdf_host_name+" CKL "+cklVulnID+" with data from Summary CSV", end = '')
-                                                                        
+                                                                            
 
                                                     except:
                                                         #summarycsv failed to load
